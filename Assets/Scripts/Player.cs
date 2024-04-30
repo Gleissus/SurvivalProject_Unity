@@ -8,12 +8,13 @@ public class Player : MonoBehaviour
     [SerializeField] private float speed = 5f;
     [SerializeField] private GameObject scythePrefab;
     
-
+    private Vector2 mousePosition;
     private Rigidbody2D rb;
 
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
     }
 
     void FixedUpdate()
@@ -39,6 +40,5 @@ public class Player : MonoBehaviour
     void Shoot()
     {
         Instantiate(scythePrefab, transform.position, Quaternion.identity);
-
     }
 }
