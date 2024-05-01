@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class EnemySpawner : MonoBehaviour
 {
-    [SerializeField] private GameObject[] enemies; // Array de inimigos que você deseja spawnar
-    [SerializeField] private float spawnInterval = 3f; // Intervalo de tempo entre cada spawn (3 segundos)
-    [SerializeField] private float spawnAreaWidth = 20f; // Largura da área de spawn
-    [SerializeField] private float spawnAreaHeight = 20f; // Altura da área de spawn
+    [SerializeField] private GameObject[] enemies; 
+    [SerializeField] private float spawnInterval = 3f; 
+    [SerializeField] private float spawnAreaWidth = 20f; 
+    [SerializeField] private float spawnAreaHeight = 20f; 
 
     void Start()
     {
