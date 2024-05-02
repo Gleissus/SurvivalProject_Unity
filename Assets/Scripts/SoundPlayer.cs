@@ -7,7 +7,9 @@ public class SoundPlayer : MonoBehaviour
     //stance private et static
     private static SoundPlayer instance;
 
-    [SerializeField] private AudioSource deathAudio;
+    [SerializeField] private AudioSource audioSource;
+    [SerializeField] private AudioClip deathAudio;
+    [SerializeField] private AudioClip collectedItem;
 
     //Acces public a l'instance à traves uns méthode static
     public static SoundPlayer GetInstance() => instance;
@@ -17,9 +19,15 @@ public class SoundPlayer : MonoBehaviour
         instance = this;
     }
 
-
     public void PlayDeathAudio()
     {
-        deathAudio.Play();
+        audioSource.clip = deathAudio;
+        audioSource.Play();
+    }
+
+    public void PlayCollectedItemAudio()
+    {
+        audioSource.clip = collectedItem;
+        audioSource.Play();
     }
 }

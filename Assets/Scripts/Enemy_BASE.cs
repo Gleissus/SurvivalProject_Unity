@@ -43,6 +43,10 @@ public class Enemy_BASE : MonoBehaviour
     void Die()
     {
         SoundPlayer.GetInstance().PlayDeathAudio();
+        GameObject crystalXP = CrystalPools.GetInstance().GetPooledCrystal();
+        crystalXP.transform.position = transform.position;
+        crystalXP.SetActive(true);
+    
         Destroy(gameObject);
     }
 }

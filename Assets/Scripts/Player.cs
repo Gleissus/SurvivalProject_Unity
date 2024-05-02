@@ -75,9 +75,7 @@ public class Player : MonoBehaviour
         {
             GameObject scythe = ObjectPool.GetInstance().GetPooledObject();
             scythe.transform.position = transform.position;
-            scythe.SetActive(true);
-
-            //Instantiate(scythePrefab, transform.position, Quaternion.identity);
+            scythe.SetActive(true);            
         }
     }
 }
