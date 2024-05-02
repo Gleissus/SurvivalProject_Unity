@@ -5,23 +5,26 @@ using UnityEngine;
 public class ScytheAttack : MonoBehaviour
 {
     [SerializeField] private float speed = 10f;
-    private Vector2 screenBounds;
+    [SerializeField] private float initialLifeTime = 3f;
+    private float lifeTime;
     private Vector2 moveDirection;
     
-    private void Start()
-    {
-        screenBounds = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, Screen.height, Camera.main.transform.position.z));
-        
+
+    private void OnEnable()
+    {       
+        lifeTime = initialLifeTime;
         moveDirection = new Vector2(Random.Range(-1f, 1f), Random.Range(-1f, 1f)).normalized;
     }
 
     void Update()
     {
         transform.position += (Vector3)moveDirection * speed * Time.deltaTime;
+
+        lifeTime -= Time.deltaTime;
                    
-        if(transform.position.x > screenBounds.x)
+        if(lifeTime <= 0)
         {
-            Destroy(gameObject);
+            gameObject.SetActive(false);
         }
     }
 }

@@ -13,22 +13,29 @@ public class EnemySpawner : MonoBehaviour
 
     void Start()
     {
-       
-        InvokeRepeating("SpawnEnemy", 5f, spawnInterval);
+
+        StartCoroutine(SpawnEnemy());
     }
 
-    void SpawnEnemy()
+    IEnumerator SpawnEnemy()
     {
-        for(int i = 0; i < enemiesPerWave; i++)
-        {            
-            // Choose a spawn point
-            Transform spawnPoint = spawnPoints[Random.Range(0, spawnPoints.Length)];
+        while (true)
+        {
+            yield return new WaitForSeconds(5f); // Timer for first spawn
 
-            // Random Enemy spawner
-            GameObject randomEnemy = enemies[Random.Range(0, enemies.Length)];
+            for (int i = 0; i < enemiesPerWave; i++)
+            {
+                // SpawnPoint random
+                Transform spawnPoint = spawnPoints[Random.Range(0, spawnPoints.Length)];
 
-            // Spawner enemy random position
-            Instantiate(randomEnemy, spawnPoint.position, Quaternion.identity);
-        }                
+                // Enemy random
+                GameObject randomEnemy = enemies[Random.Range(0, enemies.Length)];
+
+                // instantiate enemy
+                Instantiate(randomEnemy, spawnPoint.position, Quaternion.identity);
+            }
+
+            yield return new WaitForSeconds(spawnInterval); // Timer for the next spawner
+        }
     }
 }
