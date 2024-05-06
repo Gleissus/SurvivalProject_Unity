@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 8727645669031520446}
   - component: {fileID: 3492469018838696029}
   - component: {fileID: 5365268000371073122}
+  - component: {fileID: 6740532297142002699}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -34,6 +35,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 8128848045309879857}
+  - {fileID: 2326434073053871050}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!50 &5577284285485117932
@@ -216,11 +218,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0a04cfa6e7cc88045a317d4808e8b9e5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 5
-  scythePrefab: {fileID: 0}
-  shootInterval: 3
-  numberProjectiles: 5
-  attackAudio: {fileID: 3492469018838696029}
+  speed: 7
+--- !u!114 &6740532297142002699
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6744138199765313485}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62819bdb3eb96bd47a1090e7556e22a2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentXP: 0
+  currentLevel: 0
+  baseXPLevelUp: 100
+  scythAudio: {fileID: 3492469018838696029}
+  scythIntervalAttack: 3
+  scythAmountAttack: 3
 --- !u!1 &7595842917450433320
 GameObject:
   m_ObjectHideFlags: 0
@@ -327,3 +343,65 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!1001 &888485023099089737
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 3830715638150350541}
+    m_Modifications:
+    - target: {fileID: 3178889452888967299, guid: d289aef7646e5e049a02263b0f8f0ab2, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3178889452888967299, guid: d289aef7646e5e049a02263b0f8f0ab2, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 3178889452888967299, guid: d289aef7646e5e049a02263b0f8f0ab2, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3178889452888967299, guid: d289aef7646e5e049a02263b0f8f0ab2, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3178889452888967299, guid: d289aef7646e5e049a02263b0f8f0ab2, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3178889452888967299, guid: d289aef7646e5e049a02263b0f8f0ab2, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3178889452888967299, guid: d289aef7646e5e049a02263b0f8f0ab2, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3178889452888967299, guid: d289aef7646e5e049a02263b0f8f0ab2, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3178889452888967299, guid: d289aef7646e5e049a02263b0f8f0ab2, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3178889452888967299, guid: d289aef7646e5e049a02263b0f8f0ab2, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4133741805146249245, guid: d289aef7646e5e049a02263b0f8f0ab2, type: 3}
+      propertyPath: m_Name
+      value: Suriken
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: d289aef7646e5e049a02263b0f8f0ab2, type: 3}
+--- !u!4 &2326434073053871050 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3178889452888967299, guid: d289aef7646e5e049a02263b0f8f0ab2, type: 3}
+  m_PrefabInstance: {fileID: 888485023099089737}
+  m_PrefabAsset: {fileID: 0}

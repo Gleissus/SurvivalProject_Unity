@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ScytheAttack : MonoBehaviour
+public class ScytheWeapon : MonoBehaviour
 {
     [SerializeField] private float speed = 10f;
     [SerializeField] private float initialLifeTime = 3f;
