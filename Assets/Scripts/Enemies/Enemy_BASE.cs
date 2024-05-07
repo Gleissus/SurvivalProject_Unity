@@ -36,23 +36,18 @@ public class Enemy_BASE : MonoBehaviour
 
             //Flip sprite
             spriteRenderer.flipX = moveDirection.x <= 0;
-
         }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {    
-        if (collision.gameObject.CompareTag("Player"))
+        if(collision.TryGetComponent<Health>(out var healthComponent)) 
         {
-            var healthComponent = collision.GetComponent<Health>();
-            if(healthComponent != null) 
-            {
-                healthComponent.TakeDamage(damage);
-            }
+            healthComponent.TakeDamage(damage);
         }
     }
 
-    public void TakeDamage(int damage)
+    public virtual void TakeDamage(int damage)
     {
         SoundPlayer.GetInstance().PlayDeathAudio();
 

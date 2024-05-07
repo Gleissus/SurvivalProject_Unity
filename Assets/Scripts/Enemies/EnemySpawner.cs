@@ -44,12 +44,19 @@ public class EnemySpawner : MonoBehaviour
                     // SpawnPoint random
                     Transform spawnPoint = spawnPoints[Random.Range(0, spawnPoints.Length)];
                     Quaternion rotation = Quaternion.identity;
-                    // Enemy random
-                    //GameObject randomEnemy = enemies[Random.Range(0, enemies.Length)];
-                    EnemyFactory.GetInstance().CreateWeakEnemy(spawnPoint, rotation); ;
-                    // instantiate enemy
-                    //Instantiate(randomEnemy, spawnPoint.position, Quaternion.identity);                    
-                }
+
+                    //Chance for Spawn
+                    int randomNumber = Random.Range(0, 100);
+
+                    if(randomNumber < 80)
+                    {
+                        EnemyFactory.GetInstance().CreateWeakEnemy(spawnPoint, rotation);
+                    }
+                    else
+                    {
+                        EnemyFactory.GetInstance().CreateStrongEnemy(spawnPoint, rotation);
+                    }                                        
+                }                
                 yield return new WaitForSeconds(5);
             }
 

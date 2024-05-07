@@ -14,7 +14,7 @@ public class SurikenWeapon : MonoBehaviour
 
     private SpriteRenderer sprite;
     private float angle;
-    private float increaseLevelRate = .3f;
+    private readonly float increaseLevelRate = .3f;
 
     public static SurikenWeapon GetInstance() => instance;
     private void Awake()
@@ -38,13 +38,9 @@ public class SurikenWeapon : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("Enemy"))
+        if (collision.TryGetComponent<Enemy_BASE>(out var healthComponent))
         {
-            var healthComponent = collision.GetComponent<Enemy_BASE>();
-            if (healthComponent != null)
-            {
-                healthComponent.TakeDamage(damage);
-            }
+            healthComponent.TakeDamage(damage);
         }
     }
 

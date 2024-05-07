@@ -20,7 +20,7 @@ public class ScytheWeapon : MonoBehaviour
 
     void Update()
     {
-        transform.position += (Vector3)moveDirection * speed * Time.deltaTime;
+        transform.position += speed * Time.deltaTime * (Vector3)moveDirection;
 
         lifeTime -= Time.deltaTime;
                    
@@ -32,13 +32,9 @@ public class ScytheWeapon : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("Enemy"))
+        if (collision.TryGetComponent<Enemy_BASE>(out var healthComponent))
         {
-            var healthComponent = collision.GetComponent<Enemy_BASE>();
-            if (healthComponent != null)
-            {
-                healthComponent.TakeDamage(damage);
-            }
+            healthComponent.TakeDamage(damage);
         }
     }
 }

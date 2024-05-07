@@ -23,10 +23,10 @@ public class EnemyFactory : MonoBehaviour
         return Instantiate(randomEnemy, position.position, rotation);
     }
 
-    public GameObject CreateStrongEnemy() 
+    public GameObject CreateStrongEnemy(Transform position, Quaternion rotation) 
     {
 
-        return Instantiate(strongEnemy, Vector3.zero, Quaternion.identity);
+        return Instantiate(strongEnemy, position.position, rotation);
     }
 
 }

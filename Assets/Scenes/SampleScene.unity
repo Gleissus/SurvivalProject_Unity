@@ -757,7 +757,7 @@ MonoBehaviour:
   - {fileID: 592884032}
   initialSpawnInterval: 2
   initialEnemiesPerWave: 5
-  waveInterval: 5
+  waveInterval: 3
   increasePercentage: 0.1
 --- !u!4 &559669176
 Transform:
