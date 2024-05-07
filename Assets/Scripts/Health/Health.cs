@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class Health : MonoBehaviour
 {
-    [SerializeField] float currentHealth;
-    [SerializeField] float maxHealth;
+    [SerializeField] int currentHealth;
+    [SerializeField] int maxHealth;
     [SerializeField] SpriteRenderer spriteRenderer;
     [SerializeField] float blinkDuration = .1f;
 
@@ -20,7 +20,7 @@ public class Health : MonoBehaviour
         UIController.GetInstance().UpdateHealthBar(currentHealth);
     }
 
-    public void TakeDamage(float amount)
+    public void TakeDamage(int amount)
     {
         if (!isBlinking)
         {

@@ -7,17 +7,17 @@ public class Enemy_BASE : MonoBehaviour
 {
     
     [SerializeField] private int maxHealth;
-    [SerializeField] private float speed = 2f;
-    [SerializeField] private float damage = 1f;
+    [SerializeField] protected float speed = 2f;
+    [SerializeField] private int damage = 1;
     [SerializeField] private float blinkDuration = 0.2f;
 
     private int curentHealth;
     private bool isBlinking = false;    
-    private Transform target;
-    private SpriteRenderer spriteRenderer;
+    protected Transform target;
+    protected SpriteRenderer spriteRenderer;
 
 
-    void Start()
+    public virtual void Start()
     {
         target = Player.GetInstance().transform;
         spriteRenderer = GetComponentInChildren<SpriteRenderer>();
@@ -31,12 +31,17 @@ public class Enemy_BASE : MonoBehaviour
     {
         if (!isBlinking && target != null)
         {
-            Vector3 moveDirection = (target.position - transform.position).normalized;
-            transform.position += speed * Time.deltaTime * moveDirection  ;
-
-            //Flip sprite
-            spriteRenderer.flipX = moveDirection.x <= 0;
+            Move();
         }
+    }
+
+    public virtual void Move()
+    {
+        Vector3 moveDirection = (target.position - transform.position).normalized;
+        transform.position += speed * Time.deltaTime * moveDirection;
+
+        //Flip sprite
+        spriteRenderer.flipX = moveDirection.x <= 0;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
