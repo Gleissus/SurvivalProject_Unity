@@ -5,7 +5,9 @@ using UnityEngine;
 public class ScytheWeapon : MonoBehaviour
 {
     [SerializeField] private float speed = 10f;
+    [SerializeField] private float damage = 1f;
     [SerializeField] private float initialLifeTime = 3f;
+
     private float lifeTime;
     private Vector2 moveDirection;
     
@@ -25,6 +27,18 @@ public class ScytheWeapon : MonoBehaviour
         if(lifeTime <= 0)
         {
             gameObject.SetActive(false);
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Enemy"))
+        {
+            var healthComponent = collision.GetComponent<Enemy_BASE>();
+            if (healthComponent != null)
+            {
+                healthComponent.TakeDamage(damage);
+            }
         }
     }
 }

@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 5856450766271095788}
   m_Layer: 0
   m_Name: Enemy_FlyEye
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -64,7 +64,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -119,8 +119,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2eebf7d29883a2342b4cc2d9982f7366, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  life: 1
+  curentHealth: 1
+  maxHealth: 1
   speed: 3
+  damage: 1
   blinkDuration: 0.2
 --- !u!1 &5565526206908564078
 GameObject:

@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 3492469018838696029}
   - component: {fileID: 5365268000371073122}
   - component: {fileID: 6740532297142002699}
+  - component: {fileID: 1683744927925442741}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -237,6 +238,22 @@ MonoBehaviour:
   scythAudio: {fileID: 3492469018838696029}
   scythIntervalAttack: 3
   scythAmountAttack: 3
+--- !u!114 &1683744927925442741
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6744138199765313485}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8599545b263eb0649a531348d7c8c06e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentHealth: 0
+  maxHealth: 10
+  spriteRenderer: {fileID: 3083711935823763544}
+  blinkDuration: 0.1
 --- !u!1 &7595842917450433320
 GameObject:
   m_ObjectHideFlags: 0

@@ -10,6 +10,7 @@ public class SurikenWeapon : MonoBehaviour
     [SerializeField] GameObject playerPosition;
     [SerializeField] private float radius = 2f;
     [SerializeField] private float speed = 3f;
+    [SerializeField] private float damage = 1f;
 
     private SpriteRenderer sprite;
     private float angle;
@@ -33,6 +34,18 @@ public class SurikenWeapon : MonoBehaviour
         Vector2 centerPosition = playerPosition.transform.position;
         Vector2 offset = new Vector2(Mathf.Sin(angle), Mathf.Cos(angle)) * radius;
         transform.position = centerPosition + offset;
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Enemy"))
+        {
+            var healthComponent = collision.GetComponent<Enemy_BASE>();
+            if (healthComponent != null)
+            {
+                healthComponent.TakeDamage(damage);
+            }
+        }
     }
 
     public void LevelUpdate()

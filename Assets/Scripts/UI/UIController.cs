@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.UI;
 
 public class UIController : MonoBehaviour
 {
@@ -10,13 +11,12 @@ public class UIController : MonoBehaviour
     [SerializeField] private TMP_Text XPtext;
     [SerializeField] private TMP_Text Leveltext;
     [SerializeField] private TMP_Text WaveLevelText;
-    
-   
-
+    [SerializeField] private Image HealthBarImage;
+  
     public static UIController GetInstance() => instance;
     private void Awake()
     {
-        instance = this;           
+        instance = this;
     }
 
     private void Start()
@@ -39,5 +39,10 @@ public class UIController : MonoBehaviour
     public void PrintWaveLevel(int value)
     {
         WaveLevelText.text = "WAVE: " + value.ToString();
+    }
+
+    public void UpdateHealthBar(float health)
+    {
+        HealthBarImage.fillAmount = health / 10;
     }
 }
