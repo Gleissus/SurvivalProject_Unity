@@ -5,7 +5,7 @@ using UnityEngine;
 public class ScytheWeapon : MonoBehaviour
 {
     [SerializeField] private float speed = 10f;
-    [SerializeField] private float damage = 1f;
+    [SerializeField] private int damage = 1;
     [SerializeField] private float initialLifeTime = 3f;
 
     private float lifeTime;

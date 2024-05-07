@@ -52,13 +52,13 @@ public class Enemy_BASE : MonoBehaviour
         }
     }
 
-    public void TakeDamage(float damage)
+    public void TakeDamage(int damage)
     {
         SoundPlayer.GetInstance().PlayDeathAudio();
 
         if (!isBlinking)
         {
-            curentHealth--;
+            curentHealth -= damage;
 
             if (curentHealth <= 0)
             {

@@ -10,7 +10,7 @@ public class SurikenWeapon : MonoBehaviour
     [SerializeField] GameObject playerPosition;
     [SerializeField] private float radius = 2f;
     [SerializeField] private float speed = 3f;
-    [SerializeField] private float damage = 1f;
+    [SerializeField] private int damage = 1;
 
     private SpriteRenderer sprite;
     private float angle;
