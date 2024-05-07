@@ -225,8 +225,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2eebf7d29883a2342b4cc2d9982f7366, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  curentHealth: 0
-  maxHealth: 1
+  maxHealth: 2
   speed: 1
   damage: 1
   blinkDuration: 0.2

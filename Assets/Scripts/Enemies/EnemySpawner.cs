@@ -48,7 +48,7 @@ public class EnemySpawner : MonoBehaviour
                     //Chance for Spawn
                     int randomNumber = Random.Range(0, 100);
 
-                    if(randomNumber < 80)
+                    if(randomNumber < 90)
                     {
                         EnemyFactory.GetInstance().CreateWeakEnemy(spawnPoint, rotation);
                     }
