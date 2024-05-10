@@ -17,15 +17,13 @@ public class EnemyFactory : MonoBehaviour
     }
 
     public GameObject CreateWeakEnemy(Transform position, Quaternion rotation)
-    {
-        //remplacer par object pool
+    {        
         GameObject randomEnemy = weakEnemy[Random.Range(0, weakEnemy.Length)];
         return Instantiate(randomEnemy, position.position, rotation);
     }
 
     public GameObject CreateStrongEnemy(Transform position, Quaternion rotation) 
     {
-
         return Instantiate(strongEnemy, position.position, rotation);
     }
 

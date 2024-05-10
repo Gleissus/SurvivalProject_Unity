@@ -69,15 +69,6 @@ public class EnemySpawner : MonoBehaviour
         }
     }
 
-    Vector3 RandomPoint()
-    {
-        Vector3 resultat = Player.GetInstance().transform.position;
-        Vector2 randomPoint = Random.insideUnitCircle.normalized;
-        resultat.x += randomPoint.x;
-        resultat.y += randomPoint.y;
-        return resultat;
-    }
-
     public int GetCurrentWaveLevel()
     {
         return currentWaveLevel;

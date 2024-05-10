@@ -1,10 +1,5 @@
-using System;
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Rendering;
-using UnityEngine.U2D;
-using static UnityEngine.GraphicsBuffer;
 
 public class Enemy_Fly : Enemy_BASE
 {

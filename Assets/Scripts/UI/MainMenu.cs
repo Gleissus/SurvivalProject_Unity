@@ -1,32 +1,32 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 
 public class MainMenu : MonoBehaviour
 {
-    [SerializeField] SimpleButton button1;
-    [SerializeField] SimpleButton button2;
-    [SerializeField] SimpleButton button3;
-
-    [SerializeField] Image image1;
-    [SerializeField] Image image2;
-    [SerializeField] Image image3;
+    [SerializeField] SimpleButton StartButton;
+    [SerializeField] SimpleButton ExitButton;
+  
 
 
     private void Start()
     {
-        button1.OnClick += ChangeRed;
-        button2.OnClick += ChangeGreen;
-        button3.OnClick += () => image3.color = Color.black;
+        StartButton.OnClick += StartGame;
+        ExitButton.OnClick += ExitGame;
+        
     }
 
-    void ChangeRed()
+    private void StartGame()
     {
-        image1.color = Color.red;
+        SceneManager.LoadScene("SampleScene");
     }
 
-    void ChangeGreen() => image2.color = Color.green;
+    private void ExitGame()
+    {
+        Application.Quit();
+    }
 
 }
