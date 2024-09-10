@@ -1,6 +1,7 @@
 # SurvivalProject_Unity
 
 EN
+
 The game has two scenes. The MainMenu scene works, with the Start button the game starts.
 
 1. SingleTon Pattern: to make scripts accessible: GameController, objectPoll, Player, PlayerSkills
@@ -10,6 +11,7 @@ The game has two scenes. The MainMenu scene works, with the Start button the gam
 5. Gamplay Progression: At every 5 levels, the Player does Upgrade for weapons and in each Wave of enemies the enemies doing the Upgrade of HP and quantity of enemies per Wave.
 
 FR
+
 Le jeu comporte deux scenes. La scene MainMenu fonctionne, avec le bouton Start le jeu starts.
 
 1. Patron SingleTon: pour rendre les scripts accessibles :GameController, objectPoll, Player, PlayerSkills
